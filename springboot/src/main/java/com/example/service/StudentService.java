@@ -51,6 +51,7 @@ public class StudentService {
      * 删除
      */
     public void deleteById(Integer id) {
+
         studentMapper.deleteById(id);
     }
 

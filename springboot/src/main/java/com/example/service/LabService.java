@@ -72,6 +72,13 @@ public class LabService {
     /**
      * 根据ID查询
      */
+    /**
+     *
+     * @param id
+     * @return com.example.entity.Lab
+     * @descption todo
+     **/
+
     public Lab selectById(Integer id) {
         return labMapper.selectById(id);
     }
@@ -79,6 +86,13 @@ public class LabService {
     /**
      * 查询所有
      */
+    /**
+     *
+     * @param lab
+     * @return java.util.List<com.example.entity.Lab>
+     * @descption todo
+     **/
+
     public List<Lab> selectAll(Lab lab) {
         return labMapper.selectAll(lab);
     }
@@ -86,7 +100,18 @@ public class LabService {
     /**
      * 分页查询
      */
-    public PageInfo<Lab> selectPage(Lab lab, Integer pageNum, Integer pageSize) {
+
+   /**
+    *
+    * @param lab
+    * @param pageNum
+    * @param pageSize
+    * @return com.github.pagehelper.PageInfo<com.example.entity.Lab>
+    * @descption todo
+    **/
+
+
+   public PageInfo<Lab> selectPage(Lab lab, Integer pageNum, Integer pageSize) {
         Account currentUser = TokenUtils.getCurrentUser();
         if (currentUser.getRole().equals(RoleEnum.TEACHER.name())){
             lab.setTeacherId(currentUser.getId());

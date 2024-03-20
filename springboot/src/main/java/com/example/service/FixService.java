@@ -56,6 +56,17 @@ public class FixService {
     /**
      * 批量删除
      */
+    /**
+     * @param ids
+     * @return void
+     * @description TODO
+     */
+
+    /**
+     * @param ids
+     * @return void
+     * @description TODO
+     */
     public void deleteBatch(List<Integer> ids) {
         for (Integer id : ids) {
             fixMapper.deleteById(id);
@@ -64,6 +75,10 @@ public class FixService {
 
     /**
      * 修改
+     */
+    /**
+     *
+     * @param fix
      */
     public void updateById(Fix fix) {
         fix.setFixTime(DateUtil.now());
@@ -80,12 +95,26 @@ public class FixService {
     /**
      * 查询所有
      */
+
+    /**
+     *
+     * @param fix
+     * @return
+     */
     public List<Fix> selectAll(Fix fix) {
         return fixMapper.selectAll(fix);
     }
 
     /**
      * 分页查询
+     */
+
+    /**
+     * @param fix
+	 * @param pageNum
+	 * @param pageSize
+     * @return com.github.pagehelper.PageInfo<com.example.entity.Fix>
+     * @description TODO
      */
     public PageInfo<Fix> selectPage(Fix fix, Integer pageNum, Integer pageSize) {
         Account currentUser = TokenUtils.getCurrentUser();
